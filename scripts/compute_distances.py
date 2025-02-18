@@ -8,6 +8,13 @@ import geopandas as gpd
 
 from shapely.geometry import Point
 
+import time
+
+from rtree import index
+
+from concurrent.futures import ProcessPoolExecutor
+
+
 
 #"https://files.georisques.fr/di_2020/tri_2020_sig_di_30.zip"
 #"https://files.georisques.fr/di_2020/tri_2020_sig_di_11.zip"
@@ -20,7 +27,9 @@ from shapely.geometry import Point
 #script d'ajout des distances au rivières
 
 def recuperation_dvf(url = "https://files.data.gouv.fr/geo-dvf/latest/csv/2023/full.csv.gz", output_csv_path = "data/full_dvf.csv"):
-    
+
+    #fonction de récupération des données dvf pour l'année 2023 sur les départements de l'Herault, Gard et Aude
+
     if not os.path.exists(output_csv_path):
         download_and_extract_csv(url,output_csv_path)
     
@@ -51,20 +60,13 @@ def get_min_distance(point, lines):
 
 def recuperation_rivieres():
 
-    # Load the shapefile into a GeoDataFrame
+    #charger le shapefile des rivieres dans un geodataframe
     gdf_rivieres = gpd.read_file("data/CoursEau_FXX.shp")
-
-    # Display the first few rows of the GeoDataFrame
-    #print(gdf_rivieres.head())
-
-    #print("rivieres: " + str(gdf_rivieres.index.duplicated().sum()))
 
     #on recupere les geometries des departements dans un dataframe
     gdf_departements = gpd.read_file("data/departements.geojson")
     #on ne garde que les departements 11, 30, 34
     gdf_departements = gdf_departements[(gdf_departements['code'] == '11') | (gdf_departements['code'] == '30') | (gdf_departements['code'] == '34')]
-
-    #print(gdf_departements)
 
     #conversion de la projection des departements en lambert-93 (epsg 2154)
     gdf_departements_lambert93 = gdf_departements.to_crs(epsg=2154)
@@ -72,9 +74,7 @@ def recuperation_rivieres():
     #on ne garde ensuite que les rivieres qui intersectent ces departements
     gdf_rivieres_jointure = gpd.sjoin(gdf_rivieres, gdf_departements_lambert93, how="inner", predicate="intersects")
 
-    #print(gdf_rivieres_jointure)
-
-    #chargements du dvf
+    #chargement du dvf sur les départements 11, 30, 34
     gdf_dvf = gpd.read_file('data/gdf_dvf_11_30_34.shp')
     print(f"longueur du dvf: {len(gdf_dvf)}")
 
@@ -84,35 +84,60 @@ def recuperation_rivieres():
     gdf_dvf = gdf_dvf.dropna(subset=['geometry'])
     gdf_rivieres_jointure = gdf_rivieres_jointure.dropna(subset=['geometry'])
 
+    #idée numero 1: simplification des géométries pour accélérer le calcul des distances
+    gdf_rivieres_jointure['geometry'] = gdf_rivieres_jointure.geometry.simplify(tolerance=50)
+
     #sauvegarde dans un fichier shp
-    gdf_rivieres_jointure.to_file('data/cours_deau_11_30_34.shp')
+    gdf_rivieres_jointure.to_file('data/cours_deau_11_30_34_modified.shp')
 
     # Compute shortest distances from each point to each line
-    #gdf_rivieres_jointure = gdf_rivieres_jointure.set_index('gid')
+    #on reinitie les index
     gdf_rivieres_jointure = gdf_rivieres_jointure.reset_index(drop=True)
-    print(gdf_rivieres_jointure.index.duplicated().sum())
+    #print(gdf_rivieres_jointure.index.duplicated().sum())
+
+    #test sur les 100 premieres rivières 
+    gdf_test = gdf_rivieres_jointure.head(100)
 
     #calcul des distances minimales de chaque point du dvf aux rivières
-    gdf_dvf['min_distances'] = gdf_dvf.geometry.apply(lambda point: get_min_distance(point, gdf_rivieres_jointure.geometry))
+    start_time = time.time()
+
+    idx = index.Index()
+    for i, line in enumerate(gdf_rivieres_jointure.geometry):
+        idx.insert(i, line.bounds)
+
+    #idée numéro 1: simplification des rivières
+    #gdf_dvf['min_distances'] = gdf_dvf.geometry.apply(lambda point: get_min_distance(point, gdf_test.geometry))
+    #idée numéro 2: index spatial
+    gdf_dvf['min_distances'] = gdf_dvf.geometry.apply(lambda point: find_nearest_line(point, gdf_test.geometry, idx))
+
+    end_time = time.time()
+
+    elapsed_time = end_time - start_time
+    print(f"Execution time: {elapsed_time} seconds")
 
     #conversion des distances en mètres en entiers
-    gdf_dvf['min_distances'] = gdf_dvf['min_distances'].apply(lambda x: int(x))
-    
-    #max_distances = gdf_dvf['min_distances'].max()
-    #min_distances = gdf_dvf['min_distances'].min()
+    #gdf_dvf['min_distances'] = gdf_dvf['min_distances'].apply(lambda x: int(x))
 
-    #print(f"maximum des distances {max_distances}")
-    #print(f"minimum des distances {min_distances}")
 
-    #distances = gdf1.geometry.apply(lambda geom1: gdf2.geometry.distance(geom1))
+# Fonction pour trouver la polyligne la plus proche d'un point donné
+def find_nearest_line(point, lines, idx):
+    # Chercher les polylignes proches du point en utilisant leur bounding box
+    point_bounds = point.buffer(1000).bounds
+    possible_matches = list(idx.intersection(point_bounds))
 
-    # Print the result (distance matrix)
-    #print(distances)
+    # Calculer la distance réelle entre le point et les polylignes trouvées
+    nearest_line = None
+    min_distance = float('inf')
 
-    #print(min_distance)
-
-    print(f"longueur du geodataframe rivieres: {len(gdf_rivieres_jointure)}")
-    print(f"longueur du geodataframe dvf: {len(gdf_dvf)}")
+    for i in possible_matches:
+        if i < len(lines):  # Vérifier que l'indice est valide
+            line = lines.iloc[i]
+            distance = point.distance(line)
+            if distance < min_distance:
+                min_distance = distance
+                nearest_line = line
+        
+    return min_distance
 
 
 def download_and_extract_csv(url, output_csv_path):
@@ -140,5 +165,6 @@ def download_and_extract_csv(url, output_csv_path):
 
 #calcul des distances avec geopandas
 if __name__ == "__main__":
-    #recuperation_dvf()
+    
+    recuperation_dvf()
     recuperation_rivieres()
