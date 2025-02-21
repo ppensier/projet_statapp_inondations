@@ -30,10 +30,10 @@ Ensuite, il fallait conserver uniquement les transactions concernant des maisons
 - les transactions avec plusieurs maisons
 - les transactions avec au moins une maison et une dépendance
 
-![Il y a des transactions sans aucunes maisons](/docs/TransactionsSansMaison.png "Exemple de transaction sans maison")
+![Il y a des transactions sans aucunes maisons](docs/TransactionsSansMaison.png "Exemple de transaction sans maison")
 
 
-![Et des transactions avec plusieurs maisons et des dépendances](/docs/TransactionsMultiplesMaisons.png "Exemple de transaction avec plusieurs maisons et une dépendance")
+![Et des transactions avec plusieurs maisons et des dépendances](docs/TransactionsMultiplesMaisons.png "Exemple de transaction avec plusieurs maisons et une dépendance")
 
 
 Il a fallu alors décider plusieurs choses :
@@ -50,7 +50,7 @@ Travail sur les fichiers georisque :
 Travail sur les cours d’eau :
 -	4000 cours d’eau sur les 3 départements
 
-![Réseau Hydrographique de l'Occitanie](/docs/reseau_hydrographique_Occitanie.png "Réseau hydrographique de l'Occitanie")
+![Réseau Hydrographique de l'Occitanie](docs/reseau_hydrographique_Occitanie.png "Réseau hydrographique de l'Occitanie")
 
 -   Comme nous avons environ 100 000 transactions, nous devons donc calculer environ 400 millions de distances. Nous reviendrons ultérieurement sur la nécessité de calculer les distances aux rivières. De plus, il s'agit ici de distances entre des points et des polylignes. Il faut donc calculer la distance entre le projeté orthogonal du point et chaque droite définissant un segement de la polyligne. Si le projeté orthogonal n'est pas situé sur le segment, on prend alors la distance à une des deux extrémités du segment.
 En supposant que chaque rivière ou polyligne est composée de 1000 noeuds, il faudrait donc effectuer 400 milliards de calculs de distances. Le temps de calcul supposé s'établit ainsi à environ 15 heures. 
