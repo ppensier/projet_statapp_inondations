@@ -19,7 +19,7 @@ fichier_littoral = "N_sentier_littoral_L_metropole_epsg2154_102019_shape/N_senti
 geodata_littoral = gpd.read_file(fichier_littoral)
 
 
-dvf = pd.read_csv("DVFfinal.csv")
+dvf = pd.read_csv("projet_statapp_inondations/data/DVFfinal.csv")
 
 dvf["geometry"] = dvf.apply(lambda row : Point(row["longitude"], row["latitude"]), axis = 1)
 
