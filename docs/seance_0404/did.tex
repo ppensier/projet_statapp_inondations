@@ -1,0 +1,92 @@
+
+\documentclass[a4paper,12pt]{article}
+\usepackage[french]{babel}  % Langue française
+\usepackage[T1]{fontenc}    % Encodage des caractères
+\usepackage[utf8]{inputenc} % Encodage UTF-8
+\usepackage{graphicx}       % Pour insérer des images
+\usepackage{amsmath, amssymb} % Mathématiques
+\usepackage{hyperref}       % Liens hypertextes
+\usepackage{geometry}       % Mise en page
+\usepackage{verbatim}
+\geometry{margin=2.5cm}    % Marges
+
+\begin{document}
+
+% Page de titre
+\title{\textbf{projet stats app séance du 04/04/25}}
+\maketitle
+
+% Résumé
+%\begin{abstract}
+%\end{abstract}
+
+% Introduction
+\section{Introduction}
+
+La base de données historique des inondations n'étant plus disponible, j'ai essayé d'évaluer la décote liée au risque d'inondation en utilisant la variation exogène de la zone inondable entre 2013 et 2020. Il y a en effet un tracé des zones inondables en 2013 et un autre en 2020. J'ai donc testé une estimation par double différence entre les logements passés d'un statut de non-inondable en 2013 à inondable en 2020. \newline
+
+Les deux années retenues pour la double différence sont 2019 et 2021. Ce qui restreint le nombre de transaction de 100000 à environ 35000. \newline
+
+Dans un premier temps, j'ai considéré comme groupe de traitement, les transactions passant de non-inondable pour tous les risque en 2019 à inondables en risque fort uniquement en 2021. Le groupe de contrôle étant quant à lui constitué des transactions restant non inondables. \newline
+
+Ci-dessous, le nombre de transactions suivant la zone de rsique et l'année: 
+\begin{itemize}
+\item risque debordement fort 2020: 568
+\item risque debordement moyen 2020: 1954
+\item risque debordement faible 2020: 2814
+\item risque debordement fort 2013: 545.0
+\item risque debordement moyen 2013: 1093.0
+\item risque debordement faible 2013: 1188.0
+\end{itemize}
+\newline
+Il y a 113 transactions dans le groupe de traitement contre environ 11000 dans le groupe de contrôle.\newline
+
+TODO: cartographier le groupe de contrôle par rapport au groupe de traitement. 
+
+Comme le nombre de transactions est assez faible dans le groupe de contrôle, j'ai également considéré le passage de non-inondable à zone inondable à risque faible. Cette fois, le groupe de contrôle est composé de 811 transactions. \newline
+
+J'ai pas ailleurs restreint l'analyse au risque de débordement, car c'est pour ce risque que le plus de transactions sont concernées. \newline
+
+
+% Modèle et Méthodologie
+\section{Modèle}
+Nous utilisons la régression linéaire suivante :
+\begin{equation}
+	\log(\text{prix/m}^2_{it}) = \beta_0 + \beta_1 \times \text{Traitement} + \beta_2 \times \text{Post} + \beta_3 \times \text{Post} \times \text{Traitement} + controles + \varepsilon
+\end{equation}
+
+Où Traitement représente une variable binaire pour l'appartenance au groupe de traitement. Post est aussi une variable binaire valant 1 pour l'année 2021 et 0 en 2019. \newline
+
+Les contrôles sont les suivants:
+\begin{itemize}
+\item distance à la mairie
+\item nombre de dépendances (variables indicatrices de 1 à 3)
+\item nombre de pièces principales (variables indicatrices de 1 à 6)
+\item surface batie
+\item surface terrain
+\item prix moyen dans la ville
+\item annee
+\item \( \text{annee}^2 \)
+\end{itemize}
+
+% Résultats
+\section{Résultats}
+
+Ci-dessous, les résultats pour le groupe de traitement composé des transactions passant de non-inondable à risque fort. \newline
+
+\verbatiminput{resultat_DID_fort.txt}
+\newline
+Ci-dessous, les résultats pour le groupe de traitement composé des transactions passant de non-inondable à risque faible. \newline
+
+\verbatiminput{resultat_DID_faible.txt}
+
+
+% Conclusion
+\section{limites}
+\begin{itemize}
+\item coefficient causal non significatif
+\item pas de données antérieures à 2019 pour vérifier l'hypothèse de trend linéaire commun
+\item faible nombre de transactions dans le groupe de traitement
+\end{itemize}
+
+\end{document}
