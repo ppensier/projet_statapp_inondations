@@ -1,0 +1,51 @@
+                               OLS Regression Results                               
+====================================================================================
+Dep. Variable:     log_prix_par_metre_carre   R-squared:                       0.296
+Model:                                  OLS   Adj. R-squared:                  0.288
+Method:                       Least Squares   F-statistic:                     36.06
+Date:                      Tue, 15 Apr 2025   Prob (F-statistic):           1.99e-98
+Time:                              16:22:26   Log-Likelihood:                -725.72
+No. Observations:                      1473   AIC:                             1487.
+Df Residuals:                          1455   BIC:                             1583.
+Df Model:                                17                                         
+Covariance Type:                  nonrobust                                         
+=========================================================================================
+                            coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------------
+Intercept                 6.0867      0.173     35.283      0.000       5.748       6.425
+Traitement                0.0264      0.038      0.701      0.483      -0.047       0.100
+Traitement_Post          -0.0049      0.045     -0.110      0.912      -0.093       0.083
+Post                      0.0408      0.036      1.139      0.255      -0.030       0.111
+distance_mairie_km        0.0280      0.008      3.300      0.001       0.011       0.045
+distance_fleuve           0.1071      0.047      2.270      0.023       0.015       0.200
+distance_littoral        -0.0022      0.002     -1.233      0.218      -0.006       0.001
+surface_terrain           0.0004   2.71e-05     15.436      0.000       0.000       0.000
+moyenne_prix_m2_ville     0.0007    5.8e-05     12.103      0.000       0.001       0.001
+surface_reelle_bati      -0.0023      0.000     -6.981      0.000      -0.003      -0.002
+dependance_1              0.1015      0.048      2.102      0.036       0.007       0.196
+dependance_2              0.1397      0.129      1.080      0.280      -0.114       0.393
+dependance_3           1.464e-16   5.45e-17      2.685      0.007    3.94e-17    2.53e-16
+piece_principale_1        0.1183      0.108      1.095      0.274      -0.094       0.330
+piece_principale_2        0.1261      0.087      1.449      0.147      -0.045       0.297
+piece_principale_3        0.0880      0.075      1.181      0.238      -0.058       0.234
+piece_principale_4        0.1700      0.069      2.457      0.014       0.034       0.306
+piece_principale_5        0.1217      0.068      1.791      0.073      -0.012       0.255
+piece_principale_6        0.1014      0.072      1.406      0.160      -0.040       0.243
+==============================================================================
+Omnibus:                      223.028   Durbin-Watson:                   1.990
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              478.850
+Skew:                          -0.878   Prob(JB):                    1.04e-104
+Kurtosis:                       5.172   Cond. No.                     5.06e+20
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is 1.25e-32. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+************************************
+nombre d'observations: 1473
+nombre de transactions dans le groupe traite: 960.0
+nombre de transaction dans le groupe de controle: 513.0
+nombre de transactions traitement_post = 1: 369.0
+nombre de transactions après l'inondation: 589
+nombre de transactions avant l'inondation: 371.0
