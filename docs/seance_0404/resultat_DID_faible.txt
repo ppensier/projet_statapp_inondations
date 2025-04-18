@@ -2,16 +2,26 @@
 ====================================================================================
 Dep. Variable:     log_prix_par_metre_carre   R-squared:                       0.452
 Model:                                  OLS   Adj. R-squared:                  0.451
+<<<<<<< HEAD
 Method:                       Least Squares   F-statistic:                     594.4
 Date:                      Thu, 03 Apr 2025   Prob (F-statistic):               0.00
 Time:                              23:37:14   Log-Likelihood:                -5938.7
 No. Observations:                     11559   AIC:                         1.191e+04
 Df Residuals:                         11542   BIC:                         1.204e+04
 Df Model:                                16                                         
+=======
+Method:                       Least Squares   F-statistic:                     529.4
+Date:                      Mon, 14 Apr 2025   Prob (F-statistic):               0.00
+Time:                              21:49:49   Log-Likelihood:                -5933.1
+No. Observations:                     11559   AIC:                         1.190e+04
+Df Residuals:                         11540   BIC:                         1.204e+04
+Df Model:                                18                                         
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 Covariance Type:                  nonrobust                                         
 =========================================================================================
                             coef    std err          t      P>|t|      [0.025      0.975]
 -----------------------------------------------------------------------------------------
+<<<<<<< HEAD
 Intercept              8.585e-06   4.08e-06      2.107      0.035    5.96e-07    1.66e-05
 Traitement               -0.0089      0.018     -0.509      0.611      -0.043       0.025
 Traitement_Post           0.0199      0.032      0.614      0.539      -0.044       0.083
@@ -36,9 +46,41 @@ Omnibus:                     1147.095   Durbin-Watson:                   1.897
 Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1695.558
 Skew:                          -0.761   Prob(JB):                         0.00
 Kurtosis:                       4.097   Cond. No.                     5.06e+23
+=======
+Intercept              8.435e-06   4.07e-06      2.070      0.038    4.47e-07    1.64e-05
+Traitement               -0.0115      0.018     -0.649      0.516      -0.046       0.023
+Traitement_Post           0.0226      0.032      0.699      0.485      -0.041       0.086
+Post                     -0.0043      0.002     -2.070      0.038      -0.008      -0.000
+distance_mairie_km        0.0150      0.003      5.885      0.000       0.010       0.020
+distance_fleuve           0.0251      0.008      3.193      0.001       0.010       0.040
+distance_littoral        -0.0002      0.000     -1.159      0.246      -0.001       0.000
+surface_terrain       -4.357e-06   9.59e-07     -4.545      0.000   -6.24e-06   -2.48e-06
+moyenne_prix_m2_ville     0.0005      7e-06     69.310      0.000       0.000       0.000
+surface_reelle_bati      -0.0008      0.000     -6.418      0.000      -0.001      -0.001
+annee                     0.0085      0.004      2.070      0.038       0.000       0.017
+annee_2                -2.63e-06   2.04e-06     -1.291      0.197   -6.62e-06    1.36e-06
+dependance_1              0.1124      0.015      7.608      0.000       0.083       0.141
+dependance_2              0.2292      0.022     10.221      0.000       0.185       0.273
+dependance_3              0.2470      0.062      3.968      0.000       0.125       0.369
+piece_principale_1       -0.0759      0.037     -2.064      0.039      -0.148      -0.004
+piece_principale_2       -0.0750      0.030     -2.529      0.011      -0.133      -0.017
+piece_principale_3        0.0227      0.026      0.875      0.382      -0.028       0.074
+piece_principale_4        0.1183      0.024      4.981      0.000       0.072       0.165
+piece_principale_5        0.0863      0.023      3.746      0.000       0.041       0.131
+piece_principale_6        0.0612      0.025      2.475      0.013       0.013       0.110
+==============================================================================
+Omnibus:                     1147.981   Durbin-Watson:                   1.899
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1695.504
+Skew:                          -0.762   Prob(JB):                         0.00
+Kurtosis:                       4.095   Cond. No.                     5.07e+23
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 ==============================================================================
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+<<<<<<< HEAD
 [2] The smallest eigenvalue is 7.52e-31. This might indicate that there are
+=======
+[2] The smallest eigenvalue is 7.49e-31. This might indicate that there are
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 strong multicollinearity problems or that the design matrix is singular.

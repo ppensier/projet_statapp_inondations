@@ -11,6 +11,9 @@ import geopandas as gpd
 import pandas as pd
 import numpy as np
 
+import datetime
+from dateutil.relativedelta import relativedelta
+
 import seaborn as sns
 import matplotlib.pyplot as plt
 
@@ -195,7 +198,7 @@ def transformer_log(df, colonnes):
     return df
 
 
-def compute_regression(risque, fichier_dvf = "C:/Users/phile/PycharmProjects/projet_statapp_inondations/data/DVF_regression.csv"):
+def compute_regression(risque, fichier_dvf):
 
     print("calcul de la regression DiD")
 
@@ -204,10 +207,13 @@ def compute_regression(risque, fichier_dvf = "C:/Users/phile/PycharmProjects/pro
     #log transformee du prix au m2
     dvf = transformer_log(dvf,['prix_par_metre_carre'])
 
-    variables = ['Traitement', 'Traitement_Post', 'Post', 'distance_mairie_km', 'surface_terrain',
-                 'moyenne_prix_m2_ville', 'surface_reelle_bati', 'annee', 'annee_2', 'dependance_1', 'dependance_2',
-                 'dependance_3', 'piece_principale_1', 'piece_principale_2', 'piece_principale_3',
+    variables = ['Traitement', 'Traitement_Post', 'Post', 'distance_mairie_km', 'distance_fleuve', 'distance_littoral', \
+                 'surface_terrain', 'moyenne_prix_m2_ville', 'surface_reelle_bati', 'dependance_1', \
+                 'dependance_2', 'dependance_3', 'piece_principale_1', 'piece_principale_2', 'piece_principale_3', \
                  'piece_principale_4', 'piece_principale_5', 'piece_principale_6']
+
+    # df_selection = dvf[variables]
+    # df_nan = df_selection[df_selection.isna().any(axis=1)]
 
     # Régression Diff-in-Diff avec variables de contrôle
     modele = smf.ols('log_prix_par_metre_carre ~ ' + " + ".join(variables), data=dvf).fit()
@@ -215,8 +221,33 @@ def compute_regression(risque, fichier_dvf = "C:/Users/phile/PycharmProjects/pro
     # Afficher les résultats
     print(modele.summary())
 
-    with open(f"C:/Users/phile/PycharmProjects/projet_statapp_inondations/docs/seance_0404/resultat_DID_{risque}.txt", "w") as f:
+    nb_obs = len(dvf)
+    print(f"nombre d'observations: {nb_obs}")
+
+    nb_traitement = dvf['Traitement'].sum()
+    print(f"nombre de transactions dans le groupe traite: {nb_traitement}")
+
+    nb_controles = len(dvf) - nb_traitement
+    print(f"controles: {nb_controles}")
+
+    nb_transactions_traitement_post = dvf["Traitement_Post"].sum()
+    print(f"nombre de transactions traitement_post = 1: {nb_transactions_traitement_post}")
+
+    nb_post = dvf['Post'].sum()
+    nb_avant = nb_traitement - nb_post
+    print(f"nombre de transactions après l'inondation: {nb_post}")
+    print(f"nombre de transactions avant l'inondation: {nb_avant}")
+
+    with open(f"C:/Users/phile/PycharmProjects/projet_statapp_inondations/docs/seance_1604/resultat_DID_{risque}.txt", "w") as f:
         print(modele.summary(), file=f)
+
+        print("************************************", file=f)
+        print(f"nombre d'observations: {nb_obs}", file=f)
+        print(f"nombre de transactions dans le groupe traite: {nb_traitement}", file=f)
+        print(f"nombre de transaction dans le groupe de controle: {nb_controles}", file=f)
+        print(f"nombre de transactions traitement_post = 1: {nb_transactions_traitement_post}", file=f)
+        print(f"nombre de transactions après l'inondation: {nb_post}", file=f)
+        print(f"nombre de transactions avant l'inondation: {nb_avant}", file=f)
 
 
 def time_model(fichier_csv = "C:/Users/phile/PycharmProjects/projet_statapp_inondations/data/DVF_avec_distances_mairies.csv"):
@@ -270,7 +301,76 @@ def modifier_pieces_principales(dvf, liste_pieces_principales):
 
     return dvf
 
+def prepare_regression_Aude(liste_communes_traitement, liste_communes_controle, chemin_dvf_entree, chemin_dvf_sortie = \
+        "C:/Users/phile/PycharmProjects/projet_statapp_inondations/data/DVF_regression_Aude.csv"):
+
+    #récupérer le fichier dvf des années antérieures (2014-2018)
+    dvf_2014_2018 = pd.read_csv(chemin_dvf_entree)
+
+    #ouverture du dvf et application nan à tous les champs
+    dvf_2019_2024 = pd.read_csv("C:/Users/phile/PycharmProjects/projet_statapp_inondations/data/DVF_avec_distances_mairies.csv")
+
+    dvf_2019_2024_Aude = dvf_2019_2024[dvf_2019_2024['code_departement'] == 11]
+
+    #concatenation des deux dvf
+    dvf = pd.concat([dvf_2014_2018, dvf_2019_2024], axis=0)
+
+    #on filtre suivant la date
+    #un an avant le 14 octobre 2018
+    #un an après le 15 octobre 2018
+    date_inondation = datetime.date(2018, 10, 14)
+    start_date = date_inondation - relativedelta(years=1)
+    end_date = date_inondation + relativedelta(years=1)
+
+    # Convertir start_date et end_date en datetime64[ns] pour qu'ils soient compatibles avec la colonne date_mutation
+    start_date = pd.to_datetime(start_date)
+    end_date = pd.to_datetime(end_date)
+
+    dvf['date_mutation'] = pd.to_datetime(dvf['date_mutation'])  # si ce n’est pas déjà fait
+
+    dvf_filtre = dvf[(dvf['date_mutation'] >= start_date) & (dvf['date_mutation'] <= end_date)]
+
+    liste_communes_controle = [c.lower() for c in liste_communes_controle]
+    liste_communes_traitement = [c.lower() for c in liste_communes_traitement]
+    dvf_filtre['nom_commune'] = dvf_filtre['nom_commune'].str.lower()
+
+    conditions = [
+        dvf_filtre['nom_commune'].isin(liste_communes_controle),
+        dvf_filtre['nom_commune'].isin(liste_communes_traitement)
+    ]
+
+    valeurs = [0,1]
+
+    dvf_filtre['Traitement'] = np.select(conditions, valeurs, default=np.nan)
+    #on enleve les nan du dataframe pour ne consider que les communes traitees et les communes controle
+    dvf_filtre = dvf_filtre.dropna(subset=['Traitement'])
+
+    #on rajoute une colonne Post ( 1 si 2021 et 0 si 2019 )
+    date_inondation = pd.Timestamp(date_inondation)
+    dvf_filtre['Post'] = [0 if date < date_inondation else 1 for date in dvf_filtre['date_mutation']]
+
+    #ajout du produit traitement*post
+    dvf_filtre['Traitement_Post'] = dvf_filtre['Traitement']*dvf_filtre['Post']
+
+    #ajout de la moyenne des prix de la commune dans le dvf
+    dvf_filtre['moyenne_prix_m2_ville'] = dvf_filtre.groupby('nom_commune')['prix_par_metre_carre'].transform('mean')
+
+    #ajout de variables indicatrices pour le nombre de pièces principales et le nombre de dépendances
+    dvf_filtre = modifier_dependances_df(dvf_filtre, list(range(1,4)))
+    dvf_filtre = modifier_pieces_principales(dvf_filtre, list(range(1,11)))
+
+    #ajout de la  prise en compte du temps dans le prix
+    # dvf_filtre['annee'] = dvf_filtre['date_mutation'].dt.year
+    # dvf_filtre['annee_2'] = dvf_filtre['annee'] ** 2
+
+    #sauvegarde du geo_df_filtre dans un fichier csv
+    dvf_filtre = dvf_filtre.drop(columns=['geometry'])
+    dvf_filtre.to_csv(chemin_dvf_sortie)
+
+
+
 if __name__ == "__main__":
+
 
     # dvf = pd.read_csv("C:/Users/phile/PycharmProjects/projet_statapp_inondations/data/DVF_avec_distances_mairies.csv")
     # dependances = dvf['nombre_dependances'].unique()
@@ -287,7 +387,7 @@ if __name__ == "__main__":
     # compute_regression(risque = 'faible', fichier_dvf="C:/Users/phile/PycharmProjects/projet_statapp_inondations/data/DVF_regression_risque_faible.csv")
 
     #cartographie des groupes contrôle et des groupes de traitement pour les risques fort et faible
-    # dvf = pd.read_csv("C:/Users/phile/PycharmProjects/projet_statapp_inondations/data/DVF_regression_risque_fort.csv")
+    # dvf = pd.read_csv("C:/Users/phile/PycharmProjects/projet_statapp_inondations/data/DVF_regression_risque_faible.csv")
     # #on ne garde que le risque fort
     # dvf_traite = dvf[dvf['Traitement'] == 1]
     # dvf_controle = dvf[dvf['Traitement'] == 0]
@@ -304,3 +404,37 @@ if __name__ == "__main__":
     # ctx.add_basemap(ax, source=ctx.providers.OpenStreetMap.Mapnik)
     # plt.legend()
     # plt.show()
+
+
+    liste_communes_traitement = ['Villegailhenc', 'Pennautier', 'Leuc', 'Palaja', 'Couffoulens', 'Caux-et-Sauzens', \
+                                 'Pezens', 'Ventenac-Cabardès', 'Carcassonne', 'Montolieu', 'Aragon', \
+                                 'Conques-sur-Orbiel', 'Sallèles-Cabardès', 'Villemoustaussou', 'Alzonne', \
+                                 'Verzeille', 'Cazilhac', 'Villefloure', 'Limousis', 'Barbaira', \
+                                 'Villarzel-Cabardès', 'Laure-Minervois', 'Villedubert', 'Bouilhonnac', 'Montirat', \
+                                 'Berriac', 'Aigues-Vives', 'Bagnoles', 'Villegly', 'Villeneuve-Minervois', \
+                                 'Serviès-en-Val', 'Malves-en-Minervois', 'Fajac-en-Val', 'Villalier', 'Rustiques', \
+                                 'Floure', 'Arquettes-en-Val', 'Badens', 'Trèbes', 'Marseillette', 'Rieux-en-Val', \
+                                 'Ladern-sur-Lauquet', 'Lastours', 'Salsigne', 'Fraisse-Cabardès', 'Villardonnel', \
+                                 'Cépie']
+
+    liste_communes_controle = ['Roullens', 'Montclar', 'Arzens', 'Preixan', 'Moussoulens', 'Cavanac', \
+                               'Villesèquelande', 'Raissac-sur-Lampy', "Rouffiac-d'Aude", 'Alairac', 'Sainte-Eulalie', \
+                               'Lavalette', 'Saint-Martin-le-Vieil', 'Fournes-Cabardès', 'Greffeil', \
+                               'Verdun-en-Lauragais', 'Brousses-et-Villaret', 'Villanière', 'Saint-Papoul', 'Saissac', \
+                               'Villemagne', 'Cambieure', 'Donazac', 'Ferran', 'Routier', 'Gramazie', 'Loupia', \
+                               'Alaigne', "Villelongue-d'Aude", 'Villespy', 'Montgradail', 'Lasserre-de-Prouille', \
+                               'Cenne-Monestiés', 'La Force', 'Mazerolles-du-Razès', 'Villasavary', 'La Courtète', \
+                               'Lasbordes', 'Brugairolles', 'Cailhavel', 'Belvèze-du-Razès', 'Malras', \
+                               'Fenouillet-du-Razès', 'Villeneuve-lès-Montréal', 'Villepinte', 'Fanjeaux', \
+                               'Villarzel-du-Razès', 'Bram', 'Brézilhac', 'Montréal', 'Carlipa', 'Cailhau', \
+                               'Villesiscle', 'Gardie', 'Pexiora', 'Monthaut', 'Bellegarde-du-Razès', 'Pomy', \
+                               'Escueillens-et-Saint-Just-de-Bélengard', 'Villar-Saint-Anselme', 'Pomas', 'Pieusse', \
+                               'Pauligne', 'Limoux', 'Saint-Martin-de-Villereglan', 'Malviès', 'Gaja-et-Villedieu', \
+                               'Lauraguel', 'Villebazy']
+
+    prepare_regression_Aude(liste_communes_traitement, liste_communes_controle, chemin_dvf_entree="C:/Users/phile/PycharmProjects/projet_statapp_inondations/data/dvf_2014_2018_complet.csv")
+    compute_regression(risque = 'Aude', fichier_dvf="C:/Users/phile/PycharmProjects/projet_statapp_inondations/data/DVF_regression_Aude.csv")
+
+    # dvf = pd.read_csv("C:/Users/phile/PycharmProjects/projet_statapp_inondations/data/DVF_regression_Aude.csv")
+
+    exit()

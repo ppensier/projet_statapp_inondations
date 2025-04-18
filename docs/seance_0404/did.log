@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.4.3)  3 APR 2025 23:38
+=======
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.4.3)  4 APR 2025 00:11
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -483,6 +487,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--31
  []
 
 
+<<<<<<< HEAD
 ! LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -497,266 +502,442 @@ or  <return>  to continue without it.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 42--43
+=======
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 
  []
 
 
+<<<<<<< HEAD
 Underfull \hbox (badness 10000) in paragraph at lines 46--47
+=======
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 
  []
 
 
+<<<<<<< HEAD
 Underfull \hbox (badness 10000) in paragraph at lines 48--49
+=======
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 
  []
 
 [1
 
 {C:/Users/phile/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+<<<<<<< HEAD
 Underfull \hbox (badness 10000) in paragraph at lines 58--59
+=======
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 
  []
 
 
+<<<<<<< HEAD
 Underfull \hbox (badness 10000) in paragraph at lines 75--76
+=======
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 
  []
 
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 7
+<<<<<<< HEAD
 7.
+=======
+6.
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 (C:\Users\phile\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 File: "resultat_DID_fort.txt"  (verbatim)
 
+<<<<<<< HEAD
 Overfull \hbox (63.32925pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (63.32925pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 =============================================================
 =======================[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (63.32925pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (63.32925pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Dep. Variable:     log_prix_par_metre_carre   R-squared:     
                   0.455[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (63.32925pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (63.32925pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Model:                                  OLS   Adj. R-squared:
                   0.455[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (63.32925pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (63.32925pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Method:                       Least Squares   F-statistic:   
                   566.8[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (63.32925pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (63.32925pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Date:                      Thu, 03 Apr 2025   Prob (F-statist
 ic):               0.00[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (63.32925pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (63.32925pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Time:                              23:37:14   Log-Likelihood:
                 -5535.6[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (63.32925pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (63.32925pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 No. Observations:                     10861   AIC:           
               1.111e+04[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (63.32925pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (63.32925pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Df Residuals:                         10844   BIC:           
               1.123e+04[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 =============================================================
 ============================[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []                            \T1/cmtt/m/n/12 coef    std err          t      P
 >|t|      [0.025      0.975][] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 -------------------------------------------------------------
 ----------------------------[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Intercept               8.45e-06   4.08e-06      2.069      0
 .039    4.45e-07    1.65e-05[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Traitement                0.0209      0.041      0.513      0
 .608      -0.059       0.101[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Traitement_Post           0.1323      0.116      1.144      0
 .252      -0.094       0.359[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Post                     -0.0043      0.002     -2.069      0
 .039      -0.008      -0.000[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 distance_mairie_km        0.0150      0.003      5.743      0
 .000       0.010       0.020[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 surface_terrain       -3.816e-06   9.81e-07     -3.889      0
 .000   -5.74e-06   -1.89e-06[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 moyenne_prix_m2_ville     0.0005   6.04e-06     82.228      0
 .000       0.000       0.001[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 surface_reelle_bati      -0.0008      0.000     -5.901      0
 .000      -0.001      -0.001[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 annee                     0.0085      0.004      2.069      0
 .039       0.000       0.017[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 annee_2               -2.642e-06   2.04e-06     -1.294      0
 .196   -6.64e-06    1.36e-06[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 dependance_1              0.1099      0.015      7.202      0
 .000       0.080       0.140[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 dependance_2              0.2219      0.023      9.684      0
 .000       0.177       0.267[] 
  []
 
 [2]
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 dependance_3              0.3021      0.065      4.643      0
 .000       0.175       0.430[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 piece_principale_1       -0.0630      0.038     -1.668      0
 .095      -0.137       0.011[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 piece_principale_2       -0.0762      0.031     -2.490      0
 .013      -0.136      -0.016[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 piece_principale_3        0.0184      0.027      0.686      0
 .493      -0.034       0.071[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 piece_principale_4        0.1129      0.025      4.599      0
 .000       0.065       0.161[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 piece_principale_5        0.0787      0.024      3.307      0
 .001       0.032       0.125[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 piece_principale_6        0.0507      0.025      1.994      0
 .046       0.001       0.101[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (26.2883pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (26.2883pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 =============================================================
 =================[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (26.2883pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (26.2883pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Omnibus:                     1090.148   Durbin-Watson:       
             1.881[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (26.2883pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (26.2883pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Prob(Omnibus):                  0.000   Jarque-Bera (JB):    
          1617.601[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (26.2883pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (26.2883pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Skew:                          -0.766   Prob(JB):            
              0.00[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (26.2883pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (26.2883pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Kurtosis:                       4.108   Cond. No.            
          8.57e+23[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (26.2883pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (26.2883pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 =============================================================
 =================[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (106.5437pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (106.5437pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 [1] Standard Errors assume that the covariance matrix of the 
 errors is correctly specified.[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (7.76782pt too wide) in paragraph at lines 77--77
+=======
+Overfull \hbox (7.76782pt too wide) in paragraph at lines 76--76
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 [2] The smallest eigenvalue is 2.46e-31. This might indicate 
 that there are[] 
  []
 
 
+<<<<<<< HEAD
 ! LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -771,234 +952,389 @@ or  <return>  to continue without it.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 79--80
+=======
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 
  []
 
 File: "resultat_DID_faible.txt"  (verbatim)
 
+<<<<<<< HEAD
 Overfull \hbox (63.32925pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (63.32925pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 =============================================================
 =======================[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (63.32925pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (63.32925pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Dep. Variable:     log_prix_par_metre_carre   R-squared:     
                   0.452[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (63.32925pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (63.32925pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Model:                                  OLS   Adj. R-squared:
                   0.451[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (63.32925pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (63.32925pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Method:                       Least Squares   F-statistic:   
                   594.4[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (63.32925pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (63.32925pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Date:                      Thu, 03 Apr 2025   Prob (F-statist
 ic):               0.00[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (63.32925pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (63.32925pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Time:                              23:37:14   Log-Likelihood:
                 -5938.7[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (63.32925pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (63.32925pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 No. Observations:                     11559   AIC:           
               1.191e+04[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (63.32925pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (63.32925pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Df Residuals:                         11542   BIC:           
               1.204e+04[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 =============================================================
 ============================[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []                            \T1/cmtt/m/n/12 coef    std err          t      P
 >|t|      [0.025      0.975][] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 -------------------------------------------------------------
 ----------------------------[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Intercept              8.585e-06   4.08e-06      2.107      0
 .035    5.96e-07    1.66e-05[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Traitement               -0.0089      0.018     -0.509      0
 .611      -0.043       0.025[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Traitement_Post           0.0199      0.032      0.614      0
 .539      -0.044       0.083[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Post                     -0.0043      0.002     -2.107      0
 .035      -0.008      -0.000[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 distance_mairie_km        0.0157      0.003      6.204      0
 .000       0.011       0.021[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 surface_terrain       -3.877e-06   9.39e-07     -4.131      0
 .000   -5.72e-06   -2.04e-06[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 moyenne_prix_m2_ville     0.0005   5.91e-06     83.713      0
 .000       0.000       0.001[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 surface_reelle_bati      -0.0008      0.000     -6.500      0
 .000      -0.001      -0.001[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 annee                     0.0087      0.004      2.107      0
 .035       0.001       0.017[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 annee_2               -2.709e-06   2.04e-06     -1.330      0
 .184    -6.7e-06    1.28e-06[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 dependance_1              0.1125      0.015      7.616      0
 .000       0.084       0.141[] 
  []
 
 [3]
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 dependance_2              0.2270      0.022     10.125      0
 .000       0.183       0.271[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 dependance_3              0.2428      0.062      3.899      0
 .000       0.121       0.365[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 piece_principale_1       -0.0762      0.037     -2.072      0
 .038      -0.148      -0.004[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 piece_principale_2       -0.0753      0.030     -2.536      0
 .011      -0.133      -0.017[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 piece_principale_3        0.0232      0.026      0.893      0
 .372      -0.028       0.074[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 piece_principale_4        0.1187      0.024      4.996      0
 .000       0.072       0.165[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 piece_principale_5        0.0868      0.023      3.764      0
 .000       0.042       0.132[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (94.19672pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (94.19672pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 piece_principale_6        0.0611      0.025      2.469      0
 .014       0.013       0.110[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (26.2883pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (26.2883pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 =============================================================
 =================[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (26.2883pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (26.2883pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Omnibus:                     1147.095   Durbin-Watson:       
             1.897[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (26.2883pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (26.2883pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Prob(Omnibus):                  0.000   Jarque-Bera (JB):    
          1695.558[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (26.2883pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (26.2883pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Skew:                          -0.761   Prob(JB):            
              0.00[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (26.2883pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (26.2883pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 Kurtosis:                       4.097   Cond. No.            
          5.06e+23[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (26.2883pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (26.2883pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 =============================================================
 =================[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (106.5437pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (106.5437pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 [1] Standard Errors assume that the covariance matrix of the 
 errors is correctly specified.[] 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (7.76782pt too wide) in paragraph at lines 81--81
+=======
+Overfull \hbox (7.76782pt too wide) in paragraph at lines 80--80
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 []\T1/cmtt/m/n/12 [2] The smallest eigenvalue is 7.52e-31. This might indicate 
 that there are[] 
  []
@@ -1030,7 +1366,11 @@ onts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/phile/AppData/Local/Programs
 Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/phile/AppDat
 a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/phile
 /AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+<<<<<<< HEAD
 Output written on did.pdf (4 pages, 120945 bytes).
+=======
+Output written on did.pdf (4 pages, 120832 bytes).
+>>>>>>> ce7c2ea (ajout de du script DID.py et documentation DID)
 PDF statistics:
  263 PDF objects out of 1000 (max. 8388607)
  10 named destinations out of 1000 (max. 500000)
